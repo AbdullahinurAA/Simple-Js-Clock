@@ -56,3 +56,9 @@ function displayAmOrPm() {
         amOrPm.innerHTML = 'am';
     }
 }
+
+// Calling the function
+dipslayCurrentHour()
+displayCurrentMinute();
+displayCurrentSecond();
+displayAmOrPm();
