@@ -62,3 +62,12 @@ dipslayCurrentHour()
 displayCurrentMinute();
 displayCurrentSecond();
 displayAmOrPm();
+
+/////////////////////////////
+// Display date (DD/MM/YY) //
+
+// 1. Display the current date
+function displayCurrentDay() {
+    currentDay = date.getDate();
+    dateToday.innerHTML = currentDay;
+}
