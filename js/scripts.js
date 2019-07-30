@@ -71,3 +71,10 @@ function displayCurrentDay() {
     currentDay = date.getDate();
     dateToday.innerHTML = currentDay;
 }
+
+// 2. Display the current month
+function displayCurrentMonth() {
+    currentMonth = date.getMonth();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    monthToday.innerHTML = months[currentMonth];
+}
