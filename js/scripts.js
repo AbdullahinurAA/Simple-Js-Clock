@@ -43,9 +43,36 @@ function displayCurrentMinute() {
 
 // 3. Display the current seconds
 function displayCurrentSecond() {
-    seconds = date.getSeconds();
-    currentSecond.innerHTML = seconds;
+  
+   this.seconds = date.getSeconds();
+    // currentSecond.innerHTML = seconds;
+
 }
+
+// functions to update the clock
+// Set the interval for the timeout 
+displayCurrentSecond.prototype.run = function () {
+    setInterval(this.update.bind(this), 1000);
+};
+
+// Update the clock seconds
+displayCurrentSecond.prototype.update = function() {
+    this.updateTime(1);
+    console.log(this.seconds);
+    currentSecond.innerHTML = this.seconds;
+};
+
+// Increment the seconds
+displayCurrentSecond.prototype.updateTime = function (secs) {
+    this.seconds+= secs
+    if (this.seconds >= 60) {
+        this.seconds= 0;
+    }
+}
+
+var second = new displayCurrentSecond();
+second.run();
+
 
 // 4. Display Am or Pm depending on the time of day
 function displayAmOrPm() {
