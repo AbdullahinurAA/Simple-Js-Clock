@@ -40,3 +40,9 @@ function displayCurrentMinute() {
     minute = date.getMinutes();
     currentMinute.innerHTML = minute;
 }
+
+// 3. Display the current seconds
+function displayCurrentSecond() {
+    seconds = date.getSeconds();
+    currentSecond.innerHTML = seconds;
+}
