@@ -24,3 +24,11 @@ function displayDay() {
 
 // Calling the function
 displayDay();
+
+// Display time (HH:MM:SS)
+
+// 1. Display current hour
+function dipslayCurrentHour() {
+    hour = date.getHours();
+    currentHour.innerHTML = hour;
+}
