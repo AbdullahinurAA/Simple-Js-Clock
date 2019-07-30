@@ -1,4 +1,5 @@
-// 1. Declare New date Variable
+/////////////////////////////////
+// Declare New date Variable //
 var date = new Date();
 
 // variable that holds the target output
@@ -14,8 +15,8 @@ var currentMinute = document.querySelector('#minutes');
 var currentSecond = document.querySelector('#seconds');
 var amOrPm = document.querySelector('#amPm');
 
-
-// Display day (mon e.t.c)
+////////////////////////////
+// Display day (mon e.t.c) //
 function displayDay() {
     day = date.getDay();
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
@@ -25,10 +26,17 @@ function displayDay() {
 // Calling the function
 displayDay();
 
-// Display time (HH:MM:SS)
+//////////////////////////////
+// Display time (HH:MM:SS) //
 
 // 1. Display current hour
 function dipslayCurrentHour() {
     hour = date.getHours();
     currentHour.innerHTML = hour;
+}
+
+// 2. Display the current minutes
+function displayCurrentMinute() {
+    minute = date.getMinutes();
+    currentMinute.innerHTML = minute;
 }
