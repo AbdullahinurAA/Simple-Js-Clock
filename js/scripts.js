@@ -84,3 +84,8 @@ function displayCurrentYear() {
     currentYear = date.getFullYear();
     yearToday.innerHTML = currentYear;
 }
+
+// Calling the functions
+displayCurrentDay();
+displayCurrentMonth();
+displayCurrentYear();
