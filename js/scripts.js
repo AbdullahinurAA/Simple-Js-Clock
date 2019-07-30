@@ -78,3 +78,9 @@ function displayCurrentMonth() {
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     monthToday.innerHTML = months[currentMonth];
 }
+
+// 3. Display the current year
+function displayCurrentYear() {
+    currentYear = date.getFullYear();
+    yearToday.innerHTML = currentYear;
+}
