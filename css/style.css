@@ -11,4 +11,9 @@ body {
   color: #DDDDDD;
 }
 
+.clock {
+  border-radius: 40em;
+  border: 5px solid #FFFFFF;
+}
+
 /*# sourceMappingURL=style.css.map */
