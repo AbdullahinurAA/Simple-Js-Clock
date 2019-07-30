@@ -46,3 +46,13 @@ function displayCurrentSecond() {
     seconds = date.getSeconds();
     currentSecond.innerHTML = seconds;
 }
+
+// 4. Display Am or Pm depending on the time of day
+function displayAmOrPm() {
+    amPm = date.getHours();
+    if (amPm >= 12) {
+        amOrPm.innerHTML = 'pm'
+    } else {
+        amOrPm.innerHTML = 'am';
+    }
+}
