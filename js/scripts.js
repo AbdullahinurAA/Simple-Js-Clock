@@ -28,67 +28,39 @@ displayDay();
 
 //////////////////////////////
 // Display time (HH:MM:SS) //
-
-// 1. Display current hour
-function dipslayCurrentHour() {
-    hour = date.getHours();
-    currentHour.innerHTML = hour;
+function my_Clock() {
+    this.cur_date = new Date();
+    this.hours = this.cur_date.getHours();
+    this.minutes = this.cur_date.getMinutes();
+    this.seconds = this.cur_date.getSeconds();
 }
-
-// 2. Display the current minutes
-function displayCurrentMinute() {
-    minute = date.getMinutes();
-    currentMinute.innerHTML = minute;
-}
-
-// 3. Display the current seconds
-function displayCurrentSecond() {
-  
-   this.seconds = date.getSeconds();
-    // currentSecond.innerHTML = seconds;
-
-}
-
-// functions to update the clock
-// Set the interval for the timeout 
-displayCurrentSecond.prototype.run = function () {
+my_Clock.prototype.run = function () {
     setInterval(this.update.bind(this), 1000);
 };
-
-// Update the clock seconds
-displayCurrentSecond.prototype.update = function() {
+my_Clock.prototype.update = function () {
     this.updateTime(1);
-    console.log(this.seconds);
+    console.log(this.hours + ":" + this.minutes + ":" + this.seconds);
+    currentHour.innerHTML = this.hours;
+    currentMinute.innerHTML = this.minutes;
     currentSecond.innerHTML = this.seconds;
 };
-
-// Increment the seconds
-displayCurrentSecond.prototype.updateTime = function (secs) {
-    this.seconds+= secs
+my_Clock.prototype.updateTime = function (secs) {
+    this.seconds += secs;
     if (this.seconds >= 60) {
-        this.seconds= 0;
+        this.minutes++;
+        this.seconds = 0;
     }
-}
-
-var second = new displayCurrentSecond();
-second.run();
-
-
-// 4. Display Am or Pm depending on the time of day
-function displayAmOrPm() {
-    amPm = date.getHours();
-    if (amPm >= 12) {
-        amOrPm.innerHTML = 'pm'
-    } else {
-        amOrPm.innerHTML = 'am';
+    if (this.minutes >= 60) {
+        this.hours++;
+        this.minutes = 0;
     }
-}
+    if (this.hours >= 24) {
+        this.hours = 0;
+    }
+};
+var clock = new my_Clock();
+clock.run();
 
-// Calling the function
-dipslayCurrentHour()
-displayCurrentMinute();
-displayCurrentSecond();
-displayAmOrPm();
 
 /////////////////////////////
 // Display date (DD/MM/YY) //
