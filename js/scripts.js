@@ -8,3 +8,8 @@ var dayToday = document.querySelector('#day');
 var dateToday = document.querySelector('#date');
 var monthToday = document.querySelector('#month');
 var yearToday = document.querySelector('#year');
+// Time
+var currentHour = document.querySelector('#hour');
+var currentMinute = document.querySelector('#minutes');
+var currentSecond = document.querySelector('#seconds');
+var amOrPm = document.querySelector('#amPm');
